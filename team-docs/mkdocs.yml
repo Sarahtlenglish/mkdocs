@@ -1,6 +1,6 @@
 site_name: My Documentation
 site_description: Documentation for our awesome team
-site_author: Your Name
+site_author: Sarah English
 theme:
   name: simple-blog
 extra_css:
