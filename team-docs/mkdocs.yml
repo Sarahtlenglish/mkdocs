@@ -1,0 +1,16 @@
+site_name: My Documentation
+site_description: Documentation for our awesome team
+site_author: Your Name
+theme:
+  name: simple-blog
+extra_css:
+  - assets/css/custom.css
+extra_javascript:
+  - assets/js/fake-dark-mode.js
+nav:
+  - Home: index.md
+  - About: about.md
+  - Guidelines: guidelines.md
+site_url: https://sarahtlenglish.github.io/mkdocs/
+repo_url: https://github.com/sarahtlenglish/mkdocs
+use_directory_urls: true

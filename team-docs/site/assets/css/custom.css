@@ -1,0 +1,17 @@
+.fake-dark-mode-toggle {
+  position: fixed;
+  top: 20px;  /* Start position */
+  right: 20px;  /* Start position */
+  padding: 10px 20px;
+  background-color: #333;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  z-index: 9999;  /* Ensure it's always on top */
+}
+
+.fake-dark-mode-toggle:hover {
+  transform: scale(1.05);
+} 
