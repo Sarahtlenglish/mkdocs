@@ -27,6 +27,7 @@ jobs:
           pip install mkdocs-simple-blog
           
       - name: Deploy
+        working-directory: ./team-docs
         run: |
           git config --global user.name "${GITHUB_ACTOR}"
           git config --global user.email "${GITHUB_ACTOR}@users.noreply.github.com"
