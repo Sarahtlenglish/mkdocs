@@ -2,7 +2,43 @@ site_name: My Documentation
 site_description: Documentation for our awesome team
 site_author: Sarah English
 theme:
-  name: simple-blog
+  name: material
+  palette:
+    scheme: default
+    primary: blue
+    accent: light blue
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.expand
+    - navigation.top
+    - search.suggest
+    - search.highlight
+    - content.tabs.link
+    - content.code.annotation
+    - content.code.copy
+  font:
+    text: Roboto
+    code: Roboto Mono
+markdown_extensions:
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
+  - attr_list
+  - md_in_html
+  - admonition
+  - pymdownx.details
+  - pymdownx.emoji:
+      emoji_index: !!python/name:materialx.emoji.twemoji
+      emoji_generator: !!python/name:materialx.emoji.to_svg
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/sarahtlenglish/mkdocs
 extra_css:
   - assets/css/custom.css
 extra_javascript:
@@ -10,7 +46,9 @@ extra_javascript:
 nav:
   - Home: index.md
   - About: about.md
-  - Guidelines: guidelines.md
+  - Git: git.md
+  - Statisk Kodeanalyse: static-analysis.md
+  - Test: testing.md
 site_url: https://sarahtlenglish.github.io/mkdocs
 repo_url: https://github.com/sarahtlenglish/mkdocs
 use_directory_urls: true
