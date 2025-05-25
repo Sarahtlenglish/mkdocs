@@ -1,8 +1,6 @@
 # About Our Team
-We are a talented group of professionals dedicated to creating amazing software.
+Vi er en gruppe studerende fra UCL, der er dedikeret til at lære og skabe fantastisk software.
 
 ## Team Members
-- Alice (Project Manager)
-- Bob (Developer)
-- Charlie (Designer)
-- Diana (QA Engineer)
+- Mette Lund (webudvikler)
+- Sarah English (webudvikler)

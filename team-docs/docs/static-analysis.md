@@ -14,60 +14,69 @@ Her finder du information om forskellige aspekter af statisk kodeanalyse og best
     
     ### Opsætning
     ```json
-    {
-      "extends": "eslint:recommended",
-      "rules": {
-        "indent": ["error", 2],
-        "quotes": ["error", "single"],
-        "semi": ["error", "always"]
-      }
+    rules: {
+      ...stylistic.configs.recommended.rules,
+      '@stylistic/quotes': ['error', 'single'],
+      '@stylistic/comma-dangle': ['error', 'never'],
+      '@stylistic/indent': ['error', 2],
+      '@stylistic/semi': ['error', 'never'],
+      '@stylistic/brace-style': 'error',
+      '@stylistic/space-before-blocks': 'error',
+      '@stylistic/no-tabs': ['error', { allowIndentationTabs: true }]
     }
     ```
 
-=== "SRP, DRY og KISS"
-    ## SRP, DRY og KISS Principper
+=== "Refaktorering og Principper"
+    ## Kodeforbedrings Principper
     
-    ### Single Responsibility Principle (SRP)
-    - En klasse/modul skal kun have én grund til at ændre sig
-    - Hver funktion bør kun gøre én ting
-    - Eksempel på god SRP:
-      ```javascript
-      // God SRP - hver funktion har ét ansvar
-      function validateEmail(email) { ... }
-      function saveUser(user) { ... }
-      
-      // Dårlig SRP - blander ansvarsområder
-      function saveUserAndSendEmail(user) { ... }
-      ```
+    Vi har brugt forskellige principper til at forbedre vores kode gennem projektet:
 
-    ### DRY (Don't Repeat Yourself)
-    - Undgå duplikeret kode
-    - Udtræk gentaget logik til funktioner
-    - Brug utilities og helpers
+    ### Single Responsibility (SRP)
+    Hver del af koden skal kun have ét ansvar.
     
-    ### KISS (Keep It Simple, Stupid)
-    - Hold koden simpel og letforståelig
-    - Undgå overkomplicerede løsninger
-    - Prioriter læsbarhed over cleverness
+    ```javascript
+    // God SRP - hver funktion har ét ansvar
+    function validateEmail(email) { ... }
+    function saveUser(user) { ... }
+    
+    // Dårlig SRP - blander ansvarsområder
+    function saveUserAndSendEmail(user) { ... }
+    ```
 
-=== "Refaktorering"
-    ## Refaktorering
+    ### Don't Repeat Yourself (DRY)
+    Undgå at gentage den samme kode flere steder.
     
-    ### Hvornår skal man refaktorere?
-    - Når koden er svær at vedligeholde
-    - Når der er meget duplikeret kode
-    - Før man tilføjer ny funktionalitet
+    ### Keep It Simple (KISS)
+    Hold koden så simpel som mulig.
+
+    ### Eksempel på Refaktorering
+    Her er et eksempel fra vores kodebase hvor vi brugte KISS princippet til at forbedre koden:
+
+    Før (mere kompleks end nødvendigt):
+    ```javascript
+    // Vælg banner baseret på status
+    if (selectedTask.value.status === 'afvigelse') {
+        return 'deviation' // Rød banner for afvigelser
+    } else if (selectedTask.value.status === 'overskredet') {
+        return 'overdue' // Gult banner for overskredet deadline
+    }
+    ```
+
+    Efter (simpel og letlæselig):
+    ```javascript
+    if (status === 'udført') return 'completed'
+    if (status === 'inaktiv') return 'inactive'
+    if (status === 'afvigelse') return 'deviation'
+    if (status === 'overskredet') return 'overdue'
+    ```
+
+    Forbedringer:
+
+    - Fjernet unødvendige kommentarer
+    - Gjort koden selvforklarende
+    - Brugt en enklere if-struktur
+    - Konsistent formatering
     
-    ### Refaktorering Teknikker
-    1. Extract Method
-    2. Rename Variable/Method
-    3. Move Method
-    4. Replace Conditional with Polymorphism
-    
-    ### Best Practices
-    - Skriv tests før refaktorering
-    - Tag små skridt
-    - Commit ofte
 
 === "Kommentar"
     ## Funktionsdokumentation

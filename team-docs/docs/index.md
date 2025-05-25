@@ -13,5 +13,5 @@
 
 This site contains guidelines, processes, and resources for our team.
 ## Quick Links
-- [Team Guidelines](guidelines.md)
+- [Git](git.md)
 - [About Our Team](about.md)

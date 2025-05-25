@@ -1,3 +1,5 @@
+var base_url = 'https://sarahtlenglish.github.io/mkdocs';
+
 function getSearchTermFromLocation() {
   var sPageURL = window.location.search.substring(1);
   var sURLVariables = sPageURL.split('&');
