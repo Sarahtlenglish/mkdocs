@@ -6,35 +6,46 @@ document.addEventListener('DOMContentLoaded', function() {
     // Opret vores egen drillende knap
     const button = document.createElement('button');
     button.className = 'fake-dark-mode-toggle';
-    button.textContent = '🌙 Dark Mode';
+    button.innerHTML = '🌙 Dark Mode';
     document.body.appendChild(button);
 
+    // Array med sjove drille-beskeder
+    const messages = [
+        "Prøv igen! 😜",
+        "Næsten! 😅",
+        "Du kan ikke fange mig! 🏃‍♂️",
+        "Haha, for langsom! 🤪",
+        "Dark mode er overrated! ✨",
+        "Ups, jeg flyttede mig! 🙈",
+        "Nice try! 😎",
+        "Bedre held næste gang! 🍀",
+        "Kan du fange mig? 🎯",
+        "Nope, ikke her! 🚀"
+    ];
+
     button.addEventListener('click', function() {
-        // Generer tilfældige koordinater inden for vinduets synlige område
+        // Beregn tilfældig position inden for vinduet
         const maxX = window.innerWidth - button.offsetWidth;
         const maxY = window.innerHeight - button.offsetHeight;
-        
-        const randomX = Math.floor(Math.random() * maxX);
-        const randomY = Math.floor(Math.random() * maxY);
-        
+        const randomX = Math.random() * maxX;
+        const randomY = Math.random() * maxY;
+
         // Flyt knappen til den nye position
+        button.style.position = 'fixed';
         button.style.left = randomX + 'px';
         button.style.top = randomY + 'px';
+        button.style.right = 'auto';
+
+        // Tilføj en sjov animation
+        button.style.transition = 'all 0.5s ease';
         
-        // Tilføj en sjov besked
-        const messages = [
-            "Prøv igen! 😜",
-            "Næsten! 😅",
-            "Du kan ikke fange mig! 🏃‍♂️",
-            "Haha, for langsom! 🤪",
-            "Dark mode er overrated! ✨"
-        ];
+        // Vælg en tilfældig besked
+        const randomMessage = messages[Math.floor(Math.random() * messages.length)];
+        button.innerHTML = randomMessage;
         
-        button.textContent = messages[Math.floor(Math.random() * messages.length)];
-        
-        // Sæt knappen tilbage til original tekst efter 1 sekund
+        // Sæt knappen tilbage til original tekst efter 2 sekunder
         setTimeout(() => {
-            button.textContent = '🌙 Dark Mode';
-        }, 1000);
+            button.innerHTML = '🌙 Dark Mode';
+        }, 2000);
     });
 }); 
