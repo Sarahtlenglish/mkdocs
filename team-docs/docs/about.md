@@ -1,6 +1,6 @@
-# About Our Team
+# Om teamet
 Vi er en gruppe studerende fra UCL, der er dedikeret til at lære og skabe fantastisk software.
 
-## Team Members
+## Gruppemedlemmer
 - Mette Lund (webudvikler)
 - Sarah English (webudvikler)
